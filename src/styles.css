@@ -1,0 +1,29 @@
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background-color: lightskyblue;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+button {
+  display: block;
+  background-color: yellow;
+  left: 150px;
+  right: 25px;
+  font-size: 20px;
+}
+.col-8,
+.col-2,
+.col-4 {
+  font-size: 18px;
+}
+
+#frame {
+  border-color: black;
+  border: solid;
+  width: auto;
+  padding: 15px;
+  margin: 15px auto;
+  max-width: 1000px;
+}
