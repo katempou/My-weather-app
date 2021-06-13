@@ -19,6 +19,11 @@ button {
   font-size: 18px;
 }
 
+.frame-wrapper {
+  margin: 30px auto;
+  max-width: 600px;
+}
+
 .frame {
   border: 1px solid #dadde1;
   padding: 20px;
