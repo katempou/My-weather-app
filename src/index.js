@@ -3,14 +3,17 @@ let buttonSearch = document.querySelector("#searchButton");
 let buttonShow = document.querySelector("#currentLocation");
 
 function runTemp(response) {
+  console.log(response.data);
   document.querySelector("#outputCity").innerHTML = response.data.name;
   let temperature = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector("#temperature");
-  currentTemp.innerHTML = `${temperature} ℃`;
   let humidity = document.querySelector("#humidity");
-  humidity.innerHTML = `${response.data.main.humidity} %`;
   let wind = document.querySelector("#wind");
+  let descriptionElement = document.querySelector('#description');
+  currentTemp.innerHTML = `${temperature} ℃`;
+  humidity.innerHTML = `${response.data.main.humidity} %`;
   wind.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
+  descriptionElement.innerHTML= response.data.weather[0].description;
 }
 
 function enterCity(event) {
@@ -62,6 +65,6 @@ function formatDate(date) {
   if (thisMinutes < 10) {
     thisMinutes = `0${thisMinutes}`;
   }
-  return `${thisWeekday}, ${thisHour}:${thisMinutes}`;
+  return `Last updated:${thisWeekday}, ${thisHour}:${thisMinutes}`;
 }
 newCurrentDate.innerHTML = formatDate(new Date());
