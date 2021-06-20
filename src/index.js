@@ -21,8 +21,7 @@ function runTemp(response) {
 }
 
 function enterCity(event) {
-  event.preventDefault ();
-  let apiKey = "ddf09ab1befaaaefd5bca7342d836c23";
+    let apiKey = "ddf09ab1befaaaefd5bca7342d836c23";
 
   let city = document.querySelector("#inputCity").value;
   let apiUrlCity = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -95,3 +94,4 @@ fahrenheit.addEventListener("click", showFahrenheitTemp);
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", showCelsiusTemp);
 
+enterCity("New York");

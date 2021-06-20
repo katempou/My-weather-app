@@ -45,11 +45,11 @@ li {
   max-width: 600px;
   border-radius: 8px;
 }
-.units.active {
+.row.units.active {
   color: black;
   cursor: default;
 }
 
-.units.active :hover {
+.row.units.active :hover {
   text-decoration: none;
 }
