@@ -49,7 +49,7 @@ function getPosition(event) {
 function showFahrenheitTemp(event){
   event.preventDefault();
   let currentTemp = document.querySelector("#temperature");
-  let fahrenheitTemp= (celsiusTemp*9)/5+32;
+  let fahrenheitTemp= 15;
   celsiusTemp.classList.remove("active");
   fahrenheitTemp.classList.add("active");
   currentTemp.innerHTML= Math.round(fahrenheitTemp) ;
@@ -94,4 +94,4 @@ fahrenheit.addEventListener("click", showFahrenheitTemp);
 
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", showCelsiusTemp);
-showCurrentPosition();
+runTemp("New York");
