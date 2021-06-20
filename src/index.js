@@ -3,7 +3,6 @@ let buttonSearch = document.querySelector("#searchButton");
 let buttonShow = document.querySelector("#currentLocation");
 
 function runTemp(response) {
-  console.log(response.data);
   document.querySelector("#outputCity").innerHTML = response.data.name;
   let temperature = Math.round(response.data.main.temp);
   let currentTemp = document.querySelector("#temperature");
@@ -71,3 +70,5 @@ function formatDate(date) {
   return `Last updated:${thisWeekday}, ${thisHour}:${thisMinutes}`;
 }
 newCurrentDate.innerHTML = formatDate(new Date());
+
+showCurrentPosition();
