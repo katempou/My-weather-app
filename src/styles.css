@@ -46,11 +46,10 @@ li {
   border-radius: 8px;
 }
 
-.temperature.units.active {
+.units,
+.units a {
+  font-size: 20px;
+  text-decoration: none;
   color: black;
   cursor: default;
-}
-
-.temperature.units.active :hover {
-  text-decoration: none;
 }

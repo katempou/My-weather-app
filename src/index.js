@@ -21,7 +21,7 @@ function runTemp(response) {
 }
 
 function enterCity(event) {
-  event.preventDefault();
+  event.preventDefault ();
   let apiKey = "ddf09ab1befaaaefd5bca7342d836c23";
 
   let city = document.querySelector("#inputCity").value;
@@ -95,4 +95,3 @@ fahrenheit.addEventListener("click", showFahrenheitTemp);
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", showCelsiusTemp);
 
-enterCity("New York");
