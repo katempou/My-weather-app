@@ -45,8 +45,7 @@ li {
   max-width: 600px;
   border-radius: 8px;
 }
-.units,
-.units a {
+.units.active {
   color: black;
   cursor: default;
 }
