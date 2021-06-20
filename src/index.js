@@ -49,9 +49,9 @@ function getPosition(event) {
 function showFahrenheitTemp(event){
   event.preventDefault();
   let currentTemp = document.querySelector("#temperature");
-  let fahrenheitTemp= 15;
   celsiusTemp.classList.remove("active");
   fahrenheitTemp.classList.add("active");
+  let fahrenheitTemp= (celsiusTemp * 9) / 5 + 32;
   currentTemp.innerHTML= Math.round(fahrenheitTemp) ;
 }
 
