@@ -10,6 +10,8 @@ function runTemp(response) {
   let wind = document.querySelector("#wind");
   let descriptionElement = document.querySelector("#description");
   let iconElement = document.querySelector("#icon");
+
+  celsiusTemp = response.data.main.temp;
   currentTemp.innerHTML = `${temperature} ℃`;
   humidity.innerHTML = `${response.data.main.humidity} %`;
   wind.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
@@ -44,7 +46,22 @@ function getPosition(event) {
 
   navigator.geolocation.getCurrentPosition(showCurrentPosition);
 }
+function showFahrenheitTemp(event){
+  event.preventDefault();
+  let currentTemp = document.querySelector("#temperature");
+  let fahrenheitTemp= (celsiusTemp*9)/5+32;
+  celsiusTemp.classList.remove("active");
+  fahrenheitTemp.classList.add("active");
+  currentTemp.innerHTML= Math.round(fahrenheitTemp) ;
+}
 
+function showCelsiusTemp(event){
+  event.preventDefault();
+  let currentTemp = document.querySelector("#temperature");
+  fahrenheitTemp.classList.remove("active");
+  celsiusTemp.classList.add("active");
+  currentTemp.innerHTML= Math.round(celsiusTemp) ;
+}
 let now = new Date();
 let newCurrentDate = document.querySelector("#outputDate");
 function formatDate(date) {
@@ -71,4 +88,10 @@ function formatDate(date) {
 }
 newCurrentDate.innerHTML = formatDate(new Date());
 
+let celsiusTemp= null;
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", showFahrenheitTemp);
+
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", showCelsiusTemp);
 showCurrentPosition();
