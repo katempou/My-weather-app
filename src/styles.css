@@ -50,8 +50,6 @@ li {
   cursor: default;
 }
 
-.units,
-.units a :hover {
-  font-size: 20px;
+.units.active :hover {
   text-decoration: none;
 }
