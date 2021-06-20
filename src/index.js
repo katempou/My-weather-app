@@ -9,11 +9,14 @@ function runTemp(response) {
   let currentTemp = document.querySelector("#temperature");
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
-  let descriptionElement = document.querySelector('#description');
+  let descriptionElement = document.querySelector("#description");
+  let iconElement = document.querySelector("#icon");
   currentTemp.innerHTML = `${temperature} ℃`;
   humidity.innerHTML = `${response.data.main.humidity} %`;
   wind.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
   descriptionElement.innerHTML= response.data.weather[0].description;
+  iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function enterCity(event) {
