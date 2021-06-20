@@ -45,11 +45,14 @@ li {
   max-width: 600px;
   border-radius: 8px;
 }
-
 .units,
 .units a {
-  font-size: 20px;
-  text-decoration: none;
   color: black;
   cursor: default;
+}
+
+.units,
+.units a :hover {
+  font-size: 20px;
+  text-decoration: none;
 }
