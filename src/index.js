@@ -95,4 +95,3 @@ fahrenheit.addEventListener("click", showFahrenheitTemp);
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", showCelsiusTemp);
 
-enterCity("New York");
