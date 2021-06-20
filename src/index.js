@@ -50,7 +50,7 @@ function showFahrenheitTemp(event){
   event.preventDefault();
   let currentTemp = document.querySelector("#temperature");
   celsiusTemp.classList.remove("active");
-  fahrenheitTemp.classList.add("active");
+  fahrenheit.classList.add("active");
   let fahrenheitTemp= (celsiusTemp * 9) / 5 + 32;
   currentTemp.innerHTML= Math.round(fahrenheitTemp) ;
 }
@@ -58,7 +58,7 @@ function showFahrenheitTemp(event){
 function showCelsiusTemp(event){
   event.preventDefault();
   let currentTemp = document.querySelector("#temperature");
-  fahrenheitTemp.classList.remove("active");
+  fahrenheit.classList.remove("active");
   celsiusTemp.classList.add("active");
   currentTemp.innerHTML= Math.round(celsiusTemp) ;
 }
