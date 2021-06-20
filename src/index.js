@@ -49,7 +49,7 @@ function getPosition(event) {
 function showFahrenheitTemp(event){
   event.preventDefault();
   let currentTemp = document.querySelector("#temperature");
-  celsiusTemp.classList.remove("active");
+  celsius.classList.remove("active");
   fahrenheit.classList.add("active");
   let fahrenheitTemp= (celsiusTemp * 9) / 5 + 32;
   currentTemp.innerHTML= Math.round(fahrenheitTemp) ;
@@ -59,7 +59,7 @@ function showCelsiusTemp(event){
   event.preventDefault();
   let currentTemp = document.querySelector("#temperature");
   fahrenheit.classList.remove("active");
-  celsiusTemp.classList.add("active");
+  celsius.classList.add("active");
   currentTemp.innerHTML= Math.round(celsiusTemp) ;
 }
 let now = new Date();
@@ -94,3 +94,5 @@ fahrenheit.addEventListener("click", showFahrenheitTemp);
 
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", showCelsiusTemp);
+
+enterCity("New York");
