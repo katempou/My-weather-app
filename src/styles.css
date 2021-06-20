@@ -45,3 +45,12 @@ li {
   max-width: 600px;
   border-radius: 8px;
 }
+
+.temperature.active {
+  color: black;
+  cursor: default;
+}
+
+.temperature.active :hover {
+  text-decoration: none;
+}
