@@ -94,4 +94,4 @@ fahrenheit.addEventListener("click", showFahrenheitTemp);
 
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", showCelsiusTemp);
-runTemp("New York");
+enterCity("New York");
