@@ -45,8 +45,7 @@ function displayForecast(response){
   forecast.forEach(function(forecastDay, index){
 
     if( index < 6 ){
-
-  forecastHTML = forecastHTML + `
+     forecastHTML = forecastHTML + `
                     <div class="col-2">
                         <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
                         <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="42"/>
@@ -61,11 +60,11 @@ function displayForecast(response){
   forecastElement.innerHTML = forecastHTML;
 }
 function getForcast(coordinates){
-  console.log(coordinates);
+  
 
   let apiKey = "ddf09ab1befaaaefd5bca7342d836c23";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-console.log(apiUrl);
+
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -79,7 +78,7 @@ function runTemp(response) {
   let iconElement = document.querySelector("#icon");
 
   celsiusTemp = response.data.main.temp;
-  currentTemp.innerHTML = `${temperature} ℃`;
+  currentTemp.innerHTML = `${temperature}`;
   humidity.innerHTML = `${response.data.main.humidity} %`;
   wind.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
   descriptionElement.innerHTML= response.data.weather[0].description;
@@ -117,29 +116,6 @@ function getPosition(event) {
 
   navigator.geolocation.getCurrentPosition(showCurrentPosition);
 }
-function showFahrenheitTemp(event){
-  event.preventDefault();
-  let currentTemp = document.querySelector("#temperature");
-  celsius.classList.remove("active");
-  fahrenheit.classList.add("active");
-  let fahrenheitTemp= (celsiusTemp * 9) / 5 + 32;
-  currentTemp.innerHTML= Math.round(fahrenheitTemp) ;
-}
-
-function showCelsiusTemp(event){
-  event.preventDefault();
-  let currentTemp = document.querySelector("#temperature");
-  fahrenheit.classList.remove("active");
-  celsius.classList.add("active");
-  currentTemp.innerHTML= Math.round(celsiusTemp) ;
-}
-
-let celsiusTemp= null;
-let fahrenheit = document.querySelector("#fahrenheit");
-fahrenheit.addEventListener("click", showFahrenheitTemp);
-
-let celsius = document.querySelector("#celsius");
-celsius.addEventListener("click", showCelsiusTemp);
 
 searchCity("New York");
 
