@@ -47,7 +47,7 @@ function displayForecast(){
                     </div>`;
   });
     forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML=forecastHTML;
+  forecastElement.innerHTML = forecastHTML;
 }
 function runTemp(response) {
   document.querySelector("#outputCity").innerHTML = response.data.name;
