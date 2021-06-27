@@ -30,7 +30,7 @@ newCurrentDate.innerHTML = formatDate(new Date());
 
 
 function displayForecast(){
-  let forecastElement = document.querySelector("forecast");
+  let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML= `<div class="row">`;
   let days= ["Mon","Tue","Wed","Thu","Fri"];
@@ -66,14 +66,16 @@ function runTemp(response) {
   iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
-
-function enterCity(event) {
-    let apiKey = "ddf09ab1befaaaefd5bca7342d836c23";
-
-  let city = document.querySelector("#inputCity").value;
+function searchCity(city){
+  let apiKey = "ddf09ab1befaaaefd5bca7342d836c23";
   let apiUrlCity = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   axios.get(`${apiUrlCity}`).then(runTemp);
+}
+function enterCity(event) {
+  event.preventDefault();
+  let city = document.querySelector("#inputCity").value;
+  searchCity(city);
 }
 submitForm.addEventListener("submit", enterCity);
 buttonSearch.addEventListener("click", enterCity);
