@@ -2,6 +2,33 @@ let submitForm = document.querySelector("#city-form");
 let buttonSearch = document.querySelector("#searchButton");
 let buttonShow = document.querySelector("#currentLocation");
 
+let now = new Date();
+let newCurrentDate = document.querySelector("#outputDate");
+function formatDate(date) {
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+
+  let thisHour = now.getHours();
+  if (thisHour < 10) {
+    thisHour = `0${thisHour}`;
+  }
+  let thisWeekday = days[now.getDay()];
+  let thisMinutes = now.getMinutes();
+  if (thisMinutes < 10) {
+    thisMinutes = `0${thisMinutes}`;
+  }
+  return `Last updated:${thisWeekday}, ${thisHour}:${thisMinutes}`;
+}
+newCurrentDate.innerHTML = formatDate(new Date());
+
+
 function displayForecast(){
   let forecastElement = document.querySelector("forecast");
 
@@ -81,31 +108,6 @@ function showCelsiusTemp(event){
   celsius.classList.add("active");
   currentTemp.innerHTML= Math.round(celsiusTemp) ;
 }
-let now = new Date();
-let newCurrentDate = document.querySelector("#outputDate");
-function formatDate(date) {
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
-  ];
-
-  let thisHour = now.getHours();
-  if (thisHour < 10) {
-    thisHour = `0${thisHour}`;
-  }
-  let thisWeekday = days[now.getDay()];
-  let thisMinutes = now.getMinutes();
-  if (thisMinutes < 10) {
-    thisMinutes = `0${thisMinutes}`;
-  }
-  return `Last updated:${thisWeekday}, ${thisHour}:${thisMinutes}`;
-}
-newCurrentDate.innerHTML = formatDate(new Date());
 
 let celsiusTemp= null;
 let fahrenheit = document.querySelector("#fahrenheit");
