@@ -18,11 +18,11 @@
         <div class="frame-wrapper">
         <div class="frame">
             <form id="city-form">
-                <h1>
-                    Current Location 📍<button type="button" id="currentLocation">
-                        Show
+                <h3>
+                    Current Location <button type="button" id="currentLocation" class="btn btn-outline-warning">
+                        Show 📍
                     </button>
-                </h1>
+                </h3>
                 <div class="row">
                     <div class="col-8">
                         <input type="text" id="inputCity" class="form-control" />
@@ -61,18 +61,11 @@
                 </div>
                 <div class="col-2">
                     <strong> Humidity </strong>
-                </div>
-                <div class="col-2" id="humidity">
-                    73%
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-8"></div>
-                <div class="col-2">
                     <strong> Wind </strong>
                 </div>
-                <div class="col-2" id="wind">
-                    w 2 km/hr
+                <div class="col-2">
+                <strong id="humidity"> % </strong> <br>
+                <strong id="wind"> km/hr </strong>
                 </div>
             </div>
             <div class="weather-forecast" id="forecast">
